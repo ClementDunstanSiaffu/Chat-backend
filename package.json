@@ -1,0 +1,23 @@
+{
+  "name": "back-chat-app",
+  "version": "1.0.0",
+  "description": "this is the backened for chat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon app.js",
+     "start" : "node app.js"
+  },
+  "author": "clement dunstan siaffu",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "http-server": "^0.12.3",
+    "https": "^1.0.0",
+    "mongoose": "^5.9.16",
+    "nodemon": "^2.0.3",
+    "socket.io": "^2.3.0"
+  }
+}
