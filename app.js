@@ -77,7 +77,7 @@ io.on('connection',(socket) =>{
     
     socket.on('sendMessage',(message,callback) =>{
     
-       //-- const user = getUser(socket.id)
+       const user = getUser(socket.id)
         
        /* var content = new Content()
         content.id = user.id;
