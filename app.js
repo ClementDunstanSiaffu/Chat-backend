@@ -1,7 +1,7 @@
-require('./models/db')
-const mongoose = require('mongoose')
-const Content = mongoose.model('CONTENT')
-const content1 = require('./models/structure')
+//require('./models/db')
+//const mongoose = require('mongoose')
+//const Content = mongoose.model('CONTENT')
+//const content1 = require('./models/structure')
 const express = require('express');
 const socketio = require('socket.io');
 const http = require('http')
@@ -76,19 +76,17 @@ io.on('connection',(socket) =>{
     })*/
     
     socket.on('sendMessage',(message,callback) =>{
-        //console.log(message)
-        const user = getUser(socket.id)
-        //console.log(user)
-        var content = new Content()
+    
+       //-- const user = getUser(socket.id)
+        
+       /* var content = new Content()
         content.id = user.id;
         content.name = user.name;
         content.room = user.room;
         content.message = message
         content.ids = user.ids;
-        content.save();
-        /* const mtumiaji = {user:user.name,text:message}
-        allMessages.push(mtumiaji)
-        console.log(allMessages)*/
+        content.save();--*/
+       
         io.to(user.room).emit('message',{user:user.name,text:message,id:user.ids})
         callback()
     }) 
@@ -108,7 +106,7 @@ io.on('connection',(socket) =>{
 
 })
 
-app.get('/ujumbe',(req,res)=>{
+/*app.get('/ujumbe',(req,res)=>{
     Content.find((err,docs)=>{
         if(!err){
             res.json(docs)
@@ -116,7 +114,7 @@ app.get('/ujumbe',(req,res)=>{
             console.log("there is an error")
         }
     })
-})
+})*/
 
 
 
